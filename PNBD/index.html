@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Pi4n0 Day Na 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Mali&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #000;
+      font-family: 'Itim', 'Mali', cursive, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #444;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 30px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    .polaroid {
+      width: 300px;
+      aspect-ratio: 1 / 1;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 10px;
+    }
+
+    .polaroid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 10px;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: -60px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px 15px;
+      border-radius: 12px;
+      font-size: 1em;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 280px;
+    }
+
+    .nav-btn {
+      margin-top: 80px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      font-family: 'Itim', 'Mali', cursive, sans-serif;
+      border: none;
+      background: #ffffff;
+      color: rgb(73, 73, 73);
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav-btn:active {
+      transform: scale(0.95);
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 18px;
+      font-family: 'Itim', 'Mali', cursive, sans-serif;
+      line-height: 1.8;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Happy Birthday To U Na Piano</h1>
+    <div class="polaroid">
+        <img id="photo" src="0.jpg" alt="รูป">
+        <div class="caption" id="caption">รวย ๆ เฮง ๆ เน้อ</div>
+      </div>
+    
+      <button class="nav-btn" onclick="nextImage()">ดูภาพถัดไป</button>
+    
+    <div class="message">
+      วันเกิดปีนี้ เปียโนอายุ 16 ปีแล้วววว <br>
+      ก็ขอให้วันเกิดปีนี้ มึงมีความสุขมาก ๆ คิดอะไรก็ขอให้ได้ดังคำสมหวังปราถนานะ 
+      ละก็รักเปียโนมาก ๆ นะ ถึงวันไหนที่จะแบบ เหนื่อย ๆ มา พอได้คุยกับมึง ได้พูดว่าจะกอดมึง
+      มันเป็นความรู้สึกแบบ เหมือนได้กลับบ้านอีกครั้งเลย ขอขอบคุณมาก ๆ เลยนะ
+      ที่ผ่านเข้ามาในชีวิตกัน ถึงปีนี้อาจจะไม่ได้มีอะไรให้ ทั้งไม่มีเวลา ทั้งงานเยอะมาก ๆ 
+      ขอโทษด้วยนะ อะไรที่เคยทำให้ไม่สบายใจ ก็ขอโทษนะ รวย ๆ เฮง ๆ นะ 
+      อยู่ด้วยกันแบบนี้ไปอีกนาน ๆ เลยนะ
+    </div>
+
+    <div class="footer">
+      Love U Na จาก อ้ายตูนกิฟต์คอม + สภา อิอิ
+    </div>
+  </div>
+  <script>
+    const images = [
+      { src: "1.jpg", caption: "Happy Birthday Na" },
+      { src: "2.jpg", caption: "ขอบคุณที่เข้ามาในชีวิตกันนะ" },
+      { src: "3.jpg", caption: "อยู่ด้วยกันแบบนี้ไปนาน ๆ เลยนะ" },
+      { src: "4.jpg", caption: "รักมึงนะ" }
+    ];
+
+    let current = 0;
+    const photo = document.getElementById("photo");
+    const caption = document.getElementById("caption");
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      photo.src = images[current].src;
+      caption.textContent = images[current].caption;
+    }
+  </script>
+</body>
+</html>
